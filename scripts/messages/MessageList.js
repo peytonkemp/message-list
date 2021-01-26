@@ -23,3 +23,16 @@ const render = messageArray => {
     contentTarget.innerHTML = combinedSections
 }
 
+/*
+    Color the messages when one of the buttons in the ThemeButtons
+    component is clicked.
+*/
+document.querySelector(".themes").addEventListener("click", e => {
+    const idOfClickedElement = e.target.id
+
+    if (idOfClickedElement.startsWith("themeButton--")) {
+        const [prefix, color] = idOfClickedElement.split("--")
+        contentTarget.classList = []
+        contentTarget.classList.add(color)
+    }
+})
